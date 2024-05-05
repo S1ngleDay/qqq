@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>Список багов</h1>
+    <ul>
+        {% for bug in bug_list %}
+            <li><a href="{% url 'quality_control:bug_detail' bug.id %}">Имя:{{bug.title}}, Статус: {{ bug.status }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
